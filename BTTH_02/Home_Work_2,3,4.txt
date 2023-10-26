@@ -1,0 +1,63 @@
+Bài 2:
+a) scanf("d", value);
+2 lỗi sửa thành: scanf("%d", &value);
+
+b) printf("The product of %d and %d is %d"\n, x, y);
+2 lỗi sửa thành: printf("The product of %d and %d is %d\n", x, y, z);
+
+c) firstNumber + second Number = sumOfNumbers
+3 lỗi sửa thành: int (firstNumber + second Number) = sumOfNumbers;
+
+d) if (number => largest) {
+      largest == number;
+}
+2 lỗi sửa thành:
+if (number >= largest) {
+   largest = number;
+}
+
+e) */ Program to determine the largest of three integers /*
+1 lỗi sửa thành: // Program to determine the largest of three integers /*
+
+f) Scanf("%d", anInteger);
+2 lỗi sửa thành: scanf("%d", &anInteger);
+
+g) printf("Remainder of %d divided by %d is\n", x, y, x % y);
+1 lỗi sửa thành: printf("Remainder of %d divided by %d is\n", x, y);
+
+ h) if (x = y); {
+       printf(%d is equal to %d\n", x, y);
+}
+2 lỗi sửa thành:
+if (x == y); {
+    printf("%d is equal to %d\n", x, y);
+}
+
+i) print("The sum is %d\n," x + y);
+1 lỗi sửa thành: printf("The sum is %d\n," x + y);
+
+j) Printf("The value you entered is: %d\n, &value);
+3 lỗi sửa thành: printf("The value you entered is: %d\n", value);
+
+Bài 3:
+a) hiển thị: 2
+b) hiển thị: giá trị của x+x
+c) hiển thị: x=
+d) hiển thị: x=2
+e) hiển thị: giá trị của x+y = giá trị y+x
+f) không có gì
+g) không có gì
+h) không có gì
+i) không có gì
+
+Bài 4:
+a) nhân => chia => cộng => trừ
+kết quả: 15
+b)chia lấy dư => nhân => chia =>cộng => trừ
+kết quả: 2
+c)1.phép nhân (*): 9 * 3 = 27
+  2.phép chia (/): 9 * 3 / 3 = 27 / 3 = 9
+  3.phép cộng (+): 3 + 9 = 12
+  4.phép nhân (*): 3 * 9 = 27
+  5.phép nhân (*) cuối cùng: 3 * 27 = 81
+kết quả: 81
