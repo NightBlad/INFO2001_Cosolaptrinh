@@ -1,0 +1,17 @@
+Mang truoc khi sap xep (Bubble Sort): 64 34 25 12 22 11 90
+Mang sau khi sap xep (Bubble Sort): 11 12 22 25 34 64 90
+
+--------------------------------
+Process exited after 0.02321 seconds with return value 0
+Press any key to continue . . .
+
+
+
+Mang truoc khi sap xep (Selection Sort): 64 34 25 12 22 11 90
+Mang sau khi sap xep (Selection Sort): 11 12 22 25 34 64 90
+
+--------------------------------
+Process exited after 0.03029 seconds with return value 0
+Press any key to continue . . .
+
+Ta thấy thuật toán bubble sort có tốc độ nhanh  hơn thuật toán selection sort.
