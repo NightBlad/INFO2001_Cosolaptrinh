@@ -14,7 +14,8 @@ int setQuantity() {
     return maxStudent;
 }
 void initStudents(struct Student students[], int size) {
-    for (int i = 0; i < size; i++) {
+	int i; 
+    for (i = 0; i < size; i++) {
     	printf("Nhap thong tin sinh vien thu %d\n",i+1);
         printf("Nhap id sinh vien: ");
         getchar();
@@ -30,7 +31,8 @@ void initStudents(struct Student students[], int size) {
     }
 }
 void printStudents(struct Student students[], int size) {
-    for (int i = 0; i < size; i++) {
+	int i; 
+    for (i = 0; i < size; i++) {
         printf("\nThong tin sinh vien thu %d\n", i + 1);
         printf("\nMa so sinh vien la: %s", students[i].id);
         printf("Lop sinh vien la: %s", students[i].Class);
@@ -40,7 +42,8 @@ void printStudents(struct Student students[], int size) {
     }
 }
 void updateStudentInfo(struct Student students[], int size, char searchId[]) {
-    for (int i = 0; i < size; i++) {
+	int i; 
+    for (i = 0; i < size; i++) {
         if (strcmp(students[i].id, searchId) == 0) {
             printf("Nhap thong tin moi cho sinh vien co ma so %s\n", searchId);
             getchar();
@@ -60,8 +63,9 @@ void updateStudentInfo(struct Student students[], int size, char searchId[]) {
     printf("Khong tim thay sinh vien co ma so %s.\n", searchId);
 }
 void sortStudents(struct Student students[], int size, char sortBy[]) {
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = 0; j < size - i - 1; j++) {
+	int i,j; 
+    for (i = 0; i < size - 1; i++) {
+        for (j = 0; j < size - i - 1; j++) {
             if ((strcmp(sortBy, "name") == 0 && strcmp(students[j].name, students[j + 1].name) > 0) ||
                 (strcmp(sortBy, "gpa") == 0 && students[j].gpa < students[j + 1].gpa)) {
                 struct Student temp = students[j];
@@ -74,8 +78,8 @@ void sortStudents(struct Student students[], int size, char sortBy[]) {
 }
 void searchStudent(struct Student students[], int size, char search[]) {
     printf("Ket qua tim kiem:\n");
-    int found = 0;  
-    for (int i = 0; i < size; i++) {
+    int found = 0,i;  
+    for (i = 0; i < size; i++) {
         if (strstr(students[i].name, search) != NULL || strstr(students[i].id, search) != NULL) {
             found = 1;  
             printf("\nThong tin sinh vien thu %d", i + 1);
@@ -86,7 +90,7 @@ void searchStudent(struct Student students[], int size, char search[]) {
             printf("Diem sinh vien la: %.2f\n", students[i].gpa);
         }
     }
-    if (found==0) {
+    if (!found) {
         printf("Khong tim thay sinh vien co ten hoac ma so tren %s.\n", search);
     }
 }

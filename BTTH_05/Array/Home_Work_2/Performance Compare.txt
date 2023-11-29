@@ -1,0 +1,17 @@
+1.Tìm kiếm tuyến tính hay linear search:
+	- Là thuật toán được sử dụng để tìm kiếm phần tử trong dãy số ngẫu nhiên bằng cách so sánh phần tử cần tìm với từng phần tử trong dãy cho đến khi tìm được. 
+	- Điều kiện tiên quyết: có dãy số ngẫu nhiên.
+	- Có độ phức tạp thời gian trung bình là O(n) với n là số phần tử của dãy (n>1).
+
+2.Tìm kiếm nhị phân hay binary search:
+	- Là thuật toán được sử dụng để tìm kiếm phần tử trong dãy số được sắp xếp theo trình tự tăng dần hoặc giảm dần.
+	- Điều kiện tiên quyết: có dãy số được sắp xếp theo trình tự.
+	- Có độ phức tạp thời gian trung bình là O(log n) với n là số phần tử của dãy (n>1).
+
+3.Trong từng trường hợp thì hiệu suất của hai thuật toán là khác nhau:
+-TH1: dãy số được sắp xếp.
+	+ vì dãy số được sắp xếp nên binary search được áp dụng nên sẽ có hiệu suất nhanh hơn linear search vì độ phức tạp thời gian của  binary search nhanh hơn linear search: log n < n .
+
+-TH2: dãy số ngẫu nhiên.
+	+ vì dãy số không được sắp xếp nên binary search ko thể chạy một cách chính xác nên vì thế cần phải thêm một hàm sort để có thể sắp xếp lại khiến cho hiệu suất giảm sút, còn linear search vẫn giữ nguyên hiệu suất:(log n + n^2)> n.
+	+ lưu ý thuật toán sort đang dùng là selection sort, nhưng hiệu suất vẫn giảm nếu như dùng các thuật toán khác như: bubble sort (O(n^2)), quick sort (O(nlogn)), merge sort (O(nlogn)) hay insertion sort (O(N^2)) đều sẽ làm hiệu suất giảm

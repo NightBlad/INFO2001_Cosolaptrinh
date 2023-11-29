@@ -13,7 +13,8 @@ int setQuantity() {
     return maxEmployee;
 }
 void initEmployees(struct Employee employees[], int size) {
-    for (int i = 0; i < size; i++) {
+	int i; 
+    for (i = 0; i < size; i++) {
     	printf("Nhap thong tin nhan vien thu %d\n",i+1);
         printf("Nhap ma nhan vien: ");
         getchar();
@@ -27,7 +28,8 @@ void initEmployees(struct Employee employees[], int size) {
     }
 }
 void printEmployees(struct Employee employees[], int size) {
-    for (int i = 0; i < size; i++) {
+	int i; 
+    for (i = 0; i < size; i++) {
         printf("\nThong tin nhan vien thu %d\n", i + 1);
         printf("\nMa so nhan vien la: %s", employees[i].id);
         printf("Ten nhan vien la: %s", employees[i].name);
@@ -36,7 +38,8 @@ void printEmployees(struct Employee employees[], int size) {
     }
 }
 void updateEmployeeInfo(struct Employee employees[], int size, char searchId[]) {
-    for (int i = 0; i < size; i++) {
+	int i; 
+    for (i = 0; i < size; i++) {
         if (strcmp(employees[i].id, searchId) == 0) {
             printf("Nhap thong tin moi cho nhan vien co ma so %s\n", searchId);
             getchar();
@@ -54,8 +57,9 @@ void updateEmployeeInfo(struct Employee employees[], int size, char searchId[]) 
     printf("Khong tim thay nhan vien co ma so %s.\n", searchId);
 }
 void sortEmployees(struct Employee employees[], int size, char sortBy[]) {
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = 0; j < size - i - 1; j++) {
+	int i,j; 
+    for (i = 0; i < size - 1; i++) {
+        for (j = 0; j < size - i - 1; j++) {
             if ((strcmp(sortBy, "name") == 0 && strcmp(employees[j].name, employees[j + 1].name) > 0) ||
                 (strcmp(sortBy, "luong") == 0 && employees[j].salary < employees[j + 1].salary)) {
                 struct Employee temp = employees[j];
@@ -68,8 +72,8 @@ void sortEmployees(struct Employee employees[], int size, char sortBy[]) {
 }
 void searchEmployee(struct Employee employees[], int size, char search[]) {
     printf("Ket qua tim kiem:\n");
-    int found = 0;
-    for (int i = 0; i < size; i++) {
+    int found = 0,i;
+    for (i = 0; i < size; i++) {
         if (strstr(employees[i].name, search) != NULL || strstr(employees[i].id, search) != NULL) {
             found = 1;
             printf("\nThong tin nhan vien thu %d", i + 1);
@@ -99,8 +103,8 @@ void addEmployee(struct Employee employees[], int *size) {
 }
 
 void deleteEmployee(struct Employee employees[], int *size, char searchId[]) {
-    int indexToDelete = -1;
-    for (int i = 0; i < *size; i++) {
+    int indexToDelete = -1,i;
+    for (i = 0; i < *size; i++) {
         if (strcmp(employees[i].id, searchId) == 0) {
             indexToDelete = i;
             break;
@@ -108,7 +112,7 @@ void deleteEmployee(struct Employee employees[], int *size, char searchId[]) {
     }
 
     if (indexToDelete != -1) {
-        for (int i = indexToDelete; i < *size - 1; i++) {
+        for (i = indexToDelete; i < *size - 1; i++) {
             employees[i] = employees[i + 1];
         }
         *size -= 1;

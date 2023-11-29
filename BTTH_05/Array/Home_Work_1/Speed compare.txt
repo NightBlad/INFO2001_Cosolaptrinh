@@ -35,4 +35,5 @@ Process exited after 0.03535 seconds with return value 0
 Press any key to continue . . .
 
 Ta thấy thuật toán bubble sort có tốc độ xử lý chậm hơn so với thuật toán selection sort.
-nhưng hầu hêt các trường hợp thì selection sort lại có tốc độ nhanh hơn bubble sort.
+
+Ta có thể thấy hiệu suất của hai thuật toán là không giống nhau mặc dù độ phức tạp thời gian trung bình của cả hai thuật toán đều là O(n^2). Tùy vào từng trường hợp cụ thể thì có thể thấy sự thay đổi đó,nhưng trong các trường hợp trung bình thì selection sort lại có tốc độ nhanh hơn bubble sort, selection sort thực hiẹn ít phép so sánh hơn so với bubble sort, đặc biệt là khi dãy đã gần được sắp xếp.
