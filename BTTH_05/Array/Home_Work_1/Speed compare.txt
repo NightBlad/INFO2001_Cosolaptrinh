@@ -1,3 +1,4 @@
+Thí nghiệm 1:
 Mang truoc khi sap xep (Bubble Sort): 64 34 25 12 22 11 90
 Mang sau khi sap xep (Bubble Sort): 11 12 22 25 34 64 90
 
@@ -14,4 +15,24 @@ Mang sau khi sap xep (Selection Sort): 11 12 22 25 34 64 90
 Process exited after 0.03029 seconds with return value 0
 Press any key to continue . . .
 
-Ta thấy thuật toán bubble sort có tốc độ nhanh  hơn thuật toán selection sort.
+Ta thấy thuật toán bubble sort có tốc độ xử lý nhanh  hơn thuật toán selection sort.
+
+
+Thí nghiệm 2:
+Mang truoc khi sap xep (Bubble Sort): 64 34 25 12 22 11 90 43 45 89
+Mang sau khi sap xep (Bubble Sort): 11 12 22 25 34 43 45 64 89 90
+
+--------------------------------
+Process exited after 0.063 seconds with return value 0
+Press any key to continue . . .
+
+
+Mang truoc khi sap xep (Selection Sort): 64 34 25 12 22 11 90 43 45 89
+Mang sau khi sap xep (Selection Sort): 11 12 22 25 34 43 45 64 89 90
+
+--------------------------------
+Process exited after 0.03535 seconds with return value 0
+Press any key to continue . . .
+
+Ta thấy thuật toán bubble sort có tốc độ xử lý chậm hơn so với thuật toán selection sort.
+nhưng hầu hêt các trường hợp thì selection sort lại có tốc độ nhanh hơn bubble sort.
