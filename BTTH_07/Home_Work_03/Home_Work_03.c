@@ -66,7 +66,8 @@ void readFromFile(struct Contact **contacts, int *size) {
     fclose(file);
 
     if (*size > 0) {
-        printf("\nDanh sach lien lac trong tep tin:\n"); int i;
+        printf("\nDanh sach lien lac trong tep tin:\n");
+        int i;
         for (i = 0; i < *size; i++) {
             printf("\nThong tin lien lac thu %d:\n", i + 1);
             printContact(&(*contacts)[i]);
@@ -86,7 +87,8 @@ void addContact(struct Contact **contacts, int *size) {
         printf("Loi cap phat bo nho.\n");
         return;
     }
-	int i;
+
+    int i;
     for (i = *size; i < *size + n; i++) {
         printf("\nNhap thong tin cho lien lac thu %d:\n", i + 1);
         inputContact(&(*contacts)[i]);
@@ -108,7 +110,8 @@ void addNewContact(struct Contact **contacts, int *size) {
     (*size)++;
 }
 
-int findContact(const struct Contact *contacts, int size, const char *searchName) {int i;
+int findContact(const struct Contact *contacts, int size, const char *searchName) {
+	int i;
     for (i = 0; i < size; i++) {
         if (strcmp(contacts[i].name, searchName) == 0) {
             return i;
@@ -150,6 +153,14 @@ void updateContact(struct Contact *contacts, int size, const char *searchName) {
     }
 }
 
+void deleteAllContacts(struct Contact **contacts, int *size) {
+    free(*contacts);
+    *contacts = NULL;
+    *size = 0;
+    remove(FILENAME);
+    printf("Xoa toan bo du lieu trong tep tin thanh cong.\n");
+}
+
 int main() {
     printf("CHUONG TRINH QUAN LY DANH BA\n");
 
@@ -169,7 +180,8 @@ int main() {
         printf("5. Tim kiem lien lac\n");
         printf("6. Cap nhat thong tin lien lac\n");
         printf("7. In danh sach lien lac\n");
-        printf("8. Luu danh sach lien lac\n");
+        printf("8. Xoa toan bo du lieu trong tep tin\n");
+        printf("9. Luu danh sach thong tin\n");
         printf("0. Thoat\n");
         printf("Chon chuc nang: ");
         scanf("%d", &choice);
@@ -219,8 +231,9 @@ int main() {
                 break;
             }
             case 7:
-                if (contacts != NULL) {
-                    printf("\nDanh sach lien lac:\n");int i;
+                if (size > 0) {
+                    printf("\nDanh sach lien lac:\n");
+                    int i;
                     for (i = 0; i < size; i++) {
                         printf("\nThong tin lien lac thu %d:\n", i + 1);
                         printContact(&contacts[i]);
@@ -230,15 +243,18 @@ int main() {
                 }
                 break;
             case 8:
+                deleteAllContacts(&contacts, &size);
+                break;
+            case 9:
             	writeToFile(contacts, size);
                 printf("Luu thong tin lien lac vao tep tin thanh cong.\n");
-            	break;
+                break;
             case 0:
                 printf("Ban co muon luu truoc khi thoat ko?\n");
                 printf("YES/NO\n");
                 char chon[3];
                 scanf("%s", chon);
-                if (strcmp(chon, "YES") == 0 || strcmp(chon, "yes") == 0) {
+                if (strcmp(chon, "YES") == 0||strcmp(chon, "yes") == 0||strcmp(chon,"Yes")==0) {
                     writeToFile(contacts, size);
                     printf("Luu thong tin lien lac vao tep tin thanh cong.\n");
                 }
